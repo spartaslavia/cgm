@@ -35,6 +35,15 @@
       "linter": "eslint",
       "style": "scss",
       "unitTestRunner": "jest"
+    },
+    "@nx-dotnet/core": {
+      "webApi": true,
+      "template": "webapi"
     }
+  },
+  "plugins": ["@nx-dotnet/core"],
+  "workspaceLayout": {
+    "appsDir": "frontend/projects",
+    "libsDir": "frontend/projects"
   }
 }

@@ -7,6 +7,7 @@
     "@angular/compiler-cli": "~20.1.0",
     "@angular/language-service": "~20.1.0",
     "@eslint/js": "^9.8.0",
+    "@nx-dotnet/core": "^3.0.2",
     "@nx/angular": "^21.4.1",
     "@nx/eslint": "21.4.1",
     "@nx/eslint-plugin": "21.4.1",
@@ -45,5 +46,8 @@
     "@angular/router": "~20.1.0",
     "rxjs": "~7.8.0",
     "zone.js": "~0.15.0"
+  },
+  "scripts": {
+    "prepare": "nx g @nx-dotnet/core:restore"
   }
 }

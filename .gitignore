@@ -38,3 +38,10 @@ coverage
 
 # Optional eslint cache
 .eslintcache
+
+.angular
+
+# Visual Studio
+.vs
+# Nx workspace cache
+.nx

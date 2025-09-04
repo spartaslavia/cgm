@@ -1,0 +1,44 @@
+{
+  "name": "web-app",
+  "projectType": "application",
+  "root": "frontend/projects/web-app",
+  "sourceRoot": "frontend/projects/web-app/src",
+  "targets": {
+    "build": {
+      "executor": "@nx/angular:build",
+      "options": {
+        "tsConfig": "frontend/projects/web-app/tsconfig.app.json",
+        "outputPath": "dist/web-app"
+      },
+      "configurations": {
+        "production": {
+          "optimization": true
+        },
+        "development": {
+          "optimization": false,
+          "sourceMap": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "executor": "@nx/angular:dev-server",
+      "options": {
+        "buildTarget": "web-app:build:development"
+      },
+      "configurations": {
+        "production": {
+          "buildTarget": "web-app:build:production"
+        }
+      },
+      "defaultConfiguration": "development"
+    },
+    "test": {
+      "executor": "@nx/angular:karma",
+      "options": {
+        "tsConfig": "frontend/projects/web-app/tsconfig.spec.json"
+      }
+    }
+  }
+}
+

@@ -1,16 +1,24 @@
+/* To learn more about Typescript configuration file: https://www.typescriptlang.org/docs/handbook/tsconfig-json.html. */
+/* To learn more about Angular compiler options: https://angular.dev/reference/configs/angular-compiler-options. */
 {
-  "extends": "../tsconfig.base.json",
+  "compileOnSave": false,
   "compilerOptions": {
     "strict": true,
     "noImplicitOverride": true,
     "noPropertyAccessFromIndexSignature": true,
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
-    "target": "es2022",
-    "moduleResolution": "bundler",
+    "skipLibCheck": true,
     "isolatedModules": true,
-    "emitDecoratorMetadata": false,
-    "module": "preserve"
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "ES2022",
+    "module": "preserve",
+    "paths": {
+      "web-lib": [
+        "./dist/web-lib"
+      ]
+    }
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
@@ -20,13 +28,18 @@
     "strictTemplates": true
   },
   "files": [],
-  "include": [],
   "references": [
     {
-      "path": "./tsconfig.app.json"
+      "path": "./projects/web-app/tsconfig.app.json"
     },
     {
-      "path": "./tsconfig.spec.json"
+      "path": "./projects/web-app/tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/web-lib/tsconfig.lib.json"
+    },
+    {
+      "path": "./projects/web-lib/tsconfig.spec.json"
     }
   ]
 }
