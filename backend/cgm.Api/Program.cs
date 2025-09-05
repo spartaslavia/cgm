@@ -13,6 +13,14 @@ builder.Services.Configure<StorageOptions>(builder.Configuration.GetSection("Sto
 builder.Services.AddSingleton<INotesRepository, FileNotesRepository>();
 builder.Services.AddScoped<INotesService, NotesService>();
 builder.Services.AddAutoMapper(typeof(MappingProfile));
+var origins = builder.Configuration.GetSection("Cors:AllowedOrigins").Get<string[]?>();
+
+builder.Services.AddCors(opts =>
+{
+    opts.AddPolicy("Frontend", p => p.WithOrigins(origins ?? [])
+                                      .AllowAnyHeader()
+                                      .AllowAnyMethod());
+});
 
 var app = builder.Build();
 
@@ -24,7 +32,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-app.UseAuthorization();
+app.UseCors("Frontend");
 
 app.MapControllers();
 

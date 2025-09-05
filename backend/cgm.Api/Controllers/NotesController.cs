@@ -47,5 +47,3 @@ public class NotesController : ControllerBase
         return ok ? NoContent() : NotFound();
     }
 }
-
-

@@ -21,20 +21,21 @@
           "builder": "@angular/build:application",
           "options": {
             "browser": "projects/web-app/src/main.ts",
-            "polyfills": [
-              "zone.js"
-            ],
+            "polyfills": ["zone.js"],
             "tsConfig": "projects/web-app/tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
               {
                 "glob": "**/*",
                 "input": "projects/web-app/public"
+              },
+              {
+                "glob": "**/*.json",
+                "input": "projects/web-app/src/assets/i18n",
+                "output": "assets/i18n"
               }
             ],
-            "styles": [
-              "projects/web-app/src/styles.scss"
-            ]
+            "styles": ["projects/web-app/src/styles.scss"]
           },
           "configurations": {
             "production": {
@@ -50,7 +51,13 @@
                   "maximumError": "8kB"
                 }
               ],
-              "outputHashing": "all"
+              "outputHashing": "all",
+              "fileReplacements": [
+                {
+                  "replace": "projects/web-app/src/environments/environment.ts",
+                  "with": "projects/web-app/src/environments/environment.prod.ts"
+                }
+              ]
             },
             "development": {
               "optimization": false,
@@ -58,7 +65,7 @@
               "sourceMap": true
             }
           },
-          "defaultConfiguration": "production"
+          "defaultConfiguration": "development"
         },
         "serve": {
           "builder": "@angular/build:dev-server",
@@ -78,10 +85,7 @@
         "test": {
           "builder": "@angular/build:karma",
           "options": {
-            "polyfills": [
-              "zone.js",
-              "zone.js/testing"
-            ],
+            "polyfills": ["zone.js", "zone.js/testing"],
             "tsConfig": "projects/web-app/tsconfig.spec.json",
             "inlineStyleLanguage": "scss",
             "assets": [
@@ -90,9 +94,7 @@
                 "input": "projects/web-app/public"
               }
             ],
-            "styles": [
-              "projects/web-app/src/styles.scss"
-            ]
+            "styles": ["projects/web-app/src/styles.scss"]
           }
         }
       }
@@ -119,10 +121,7 @@
           "builder": "@angular/build:karma",
           "options": {
             "tsConfig": "projects/web-lib/tsconfig.spec.json",
-            "polyfills": [
-              "zone.js",
-              "zone.js/testing"
-            ]
+            "polyfills": ["zone.js", "zone.js/testing"]
           }
         }
       }

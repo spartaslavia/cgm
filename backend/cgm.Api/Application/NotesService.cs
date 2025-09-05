@@ -49,5 +49,3 @@ public class NotesService : INotesService
 
     public Task<bool> DeleteAsync(Guid id, CancellationToken ct) => _repo.DeleteAsync(id, ct);
 }
-
-
