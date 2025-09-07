@@ -17,7 +17,6 @@ import { TranslateModule } from '@ngx-translate/core';
 import { NotesHeaderComponent } from '../notes-header/notes-header.component';
 import { NotesSearchComponent } from '../notes-search/notes-search.component';
 import { NoteCardComponent } from '../note-card/note-card.component';
-import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'notes-list',
