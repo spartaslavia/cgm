@@ -1,0 +1,9 @@
+<mat-form-field appearance="outline" class="w-100">
+  <mat-label>{{ 'SEARCH' | translate }}</mat-label>
+  <input matInput [formControl]="ctrl" [placeholder]="'SEARCH_PLACEHOLDER' | translate" />
+  @if (ctrl.value) {
+  <button mat-icon-button matSuffix (click)="ctrl.setValue('')" aria-label="Clear">
+    <mat-icon>close</mat-icon>
+  </button>
+  }
+</mat-form-field>

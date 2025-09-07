@@ -14,7 +14,10 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@cgm/web-lib": ["./frontend/projects/web-lib/src/public-api.ts"],
+      "web-lib": ["./frontend/projects/web-lib/src/public-api.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

@@ -1,0 +1,6 @@
+@cgm.Api_HostAddress = http://localhost:5260
+
+GET {{cgm.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

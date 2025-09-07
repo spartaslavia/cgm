@@ -1,0 +1,30 @@
+{
+  "name": "web-lib",
+  "projectType": "library",
+  "root": "frontend/projects/web-lib",
+  "sourceRoot": "frontend/projects/web-lib/src",
+  "targets": {
+    "build": {
+      "executor": "@nx/angular:ng-packagr",
+      "options": {
+        "project": "frontend/projects/web-lib/ng-package.json"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "frontend/projects/web-lib/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "frontend/projects/web-lib/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "test": {
+      "executor": "@nx/angular:karma",
+      "options": {
+        "tsConfig": "frontend/projects/web-lib/tsconfig.spec.json"
+      }
+    }
+  }
+}
+
