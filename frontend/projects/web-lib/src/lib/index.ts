@@ -8,3 +8,6 @@ export * from './components/note-detail/note-detail.component';
 export * from './components/notes-header/notes-header.component';
 export * from './components/notes-search/notes-search.component';
 export * from './components/note-card/note-card.component';
+export * from './state/notes/notes.actions';
+export * from './state/notes/notes.reducer';
+export * from './state/notes/notes.effects';

@@ -10,4 +10,3 @@ export const noteExistsGuard: CanActivateFn = (route: ActivatedRouteSnapshot) =>
   if (!id) return router.createUrlTree(['/notes']);
   return service.get(id).pipe(map((n) => (n ? true : router.createUrlTree(['/notes']))));
 };
-
